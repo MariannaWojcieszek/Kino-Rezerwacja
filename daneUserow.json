@@ -1,0 +1,31 @@
+{
+    "daneUserow":[
+      {"email":"user1@email.com", "password":"pass1"}, 
+      {"email":"user2@email.com", "password":"pass2"},
+      {"email":"user3@email.com", "password":"pass3"}
+    ]
+}
+
+{
+    "kinoPoznan":[
+        {"film":"Incepcja", "godzina":"11.30"},
+        {"film":"Dunkierka", "godzina":"15.00"},
+        {"film":"Memento", "godzina":"20.00"}
+    ]
+}
+
+{
+    "kinoWarszawa":[
+        {"film":"Początek", "godzina":"12.00"},
+        {"film":"Pogorzelisko", "godzina":"16.45"},
+        {"film":"Labirynt", "godzina":"21.00"}
+    ]
+}
+
+{
+    "kinoKrakow":[
+        {"film":"Ojciec Chrzestny 1", "godzina":"14.20"},
+        {"film":"Ojciec Chrzestny 2", "godzina":"18.15"},
+        {"film":"Ojciec Chrzestny 3", "godzina":"21.30"}
+    ]
+}

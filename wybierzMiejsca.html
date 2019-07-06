@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wybierz Miejsca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="loginBox wybierzKino">
+            
+            <div>
+                    <div id="div1">
+                    </div><br>
+                    Cena biletów (PLN):
+                    <div id="cena">
+                    Wybierz miejsca!
+                    </div>
+            
+                    <br><br>
+                    <button class="button" onclick="potwierdz()">Potwierdź</button>
+            </div>  
+            
+    </div>
+</div>
+
+   <script>
+       for(let j=1;j<10;j++){
+    let para_parent = document.createElement("div");
+    for(let i=1;i<10;i++){
+        let para = document.createElement("span");
+        let node = document.createTextNode("R" + j  + "M" + i + " ");
+        para.appendChild(node);
+        para_parent.appendChild(para);
+    }
+    var element = document.getElementById("div1");
+    element.appendChild(para_parent);
+}
+
+var sum=0;
+var elements = document.querySelectorAll('div span');
+elements.forEach((element) => {
+  element.addEventListener('click', () => {
+    if (element.style.color == 'red')   {element.style.color = 'black'; sum = sum - 20; document.getElementById("cena").innerHTML = sum}
+    else {element.style.color = 'red'; sum = sum + 20; document.getElementById("cena").innerHTML = sum;  }
+  });
+});;
+
+function potwierdz() {
+  alert("Dziękujemy! Na Twojego maila zostało wysłane potwierdzenie rezerwacji.");
+}
+   </script>
+</body>
+</html>

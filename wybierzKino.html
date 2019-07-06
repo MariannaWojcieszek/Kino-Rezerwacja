@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wybierz Kino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="loginBox wybierzKino">
+            
+                <label for="wybor"> <h2>REPERTUAR KIN</h2> </label>
+                <select style="margin: 25px; height: 30px; width: 50%; background-color: #b62222; color: white; text-transform: uppercase;" name="" id="wybor">
+                    <option value="" selected disabled hidden>Wybierz kino</option>
+                    <option value="poznan">Poznań</option>
+                    <option value="warszawa">Warszawa</option>
+                    <option value="krakow">Kraków</option>
+                </select>
+                    
+                <div id="kino_poznan" class="ukryj">Repertuar - Poznań:<br>
+                Incepcja - 11.30 -> <a href="wybierzMiejsca.html">REZERWUJ</a><br>Dunkierka - 15.00 -> <a href="wybierzMiejsca.html">REZERWUJ</a><br>Memento - 20.00 -> <a href="wybierzMiejsca.html">REZERWUJ</a>
+                </div>
+            
+                <div id="kino_warszawa" class="ukryj">Repertuar - Warszawa:<br>
+                Początek - 12.00 -> <a href="wybierzMiejsca.html">REZERWUJ</a><br>Pogorzelisko - 16.45 -> <a href="wybierzMiejsca.html">REZERWUJ</a><br>Labirynt - 21.00 -> <a href="wybierzMiejsca.html">REZERWUJ</a>
+                </div>
+            
+                <div id="kino_krakow" class="ukryj">Repertuar - Kraków:<br>
+                Ojciec Chrzestny 1 - 14.20 -> <a href="wybierzMiejsca.html">REZERWUJ</a><br>Ojciec Chrzestny 2 - 18.15 -> <a href="wybierzMiejsca.html">REZERWUJ</a><br>Ojciec Chrzestny 3 - 21.30 -> <a href="wybierzMiejsca.html">REZERWUJ</a>
+                </div>
+            
+    </div>
+</div>
+
+   <script>
+
+        document.getElementById("wybor").addEventListener("change",function(){
+        var selObj = document.getElementById("wybor");
+        var selValue = selObj.options[selObj.selectedIndex].value;
+  
+        if (selValue == "poznan"){
+        document.getElementById("kino_poznan").classList.remove("ukryj");
+        document.getElementById("kino_warszawa").classList.add("ukryj");
+        document.getElementById("kino_krakow").classList.add("ukryj")}
+        if (selValue == "warszawa"){
+        document.getElementById("kino_warszawa").classList.remove("ukryj");
+        document.getElementById("kino_poznan").classList.add("ukryj");
+        document.getElementById("kino_krakow").classList.add("ukryj")}
+        if (selValue == "krakow"){
+        document.getElementById("kino_krakow").classList.remove("ukryj");
+        document.getElementById("kino_poznan").classList.add("ukryj");
+        document.getElementById("kino_warszawa").classList.add("ukryj")}
+        })
+    </script>
+</body>
+</html>

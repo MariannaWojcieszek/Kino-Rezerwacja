@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="loginBox">
+
+        <form name = "form1" action="#" onsubmit='return validation()'>
+
+            <h2>LOGOWANIE</h2>
+            
+            <div class="formInput">
+            <input type="text" name="user" placeholder="E-mail">
+            </div>
+
+            <div class="formInput">
+            <input type="text" name="pass" placeholder="Hasło" id="example">
+            </div>
+
+            <input type="button" value="Zaloguj" class="button" onclick="check();">
+      
+        </form> 
+    </div>
+</div>
+
+    <script>
+
+        //function validation(){
+        //var re = /[a-zA-Z]{8}/;
+
+        //if (!re.test(document.getElementById('example').value))
+        //{
+        //prompt('Wpisz co najmniej 8 znaków');
+        //return false;
+        //}
+        //return true;
+        //}
+
+        var users = new Array("user1@email.com", "user2@email.com", "user3@email.com");
+        var passwords = new Array("pass1", "pass2", "pass3");
+        
+        function sprawdz_haslo(user, pass) {  
+              for(var i = 0; i < users.length; i++){
+                if((user == users[i]) && (pass == passwords[i]))
+                  return true;
+              }
+                    return false;
+            }
+            
+        function check() {
+              var user = document.form1.user.value;
+              var pass = document.form1.pass.value;
+              if(!sprawdz_haslo(user, pass)){
+                  alert('Niepoprawny e-mail lub hasło!');
+              }
+              else{
+                document.location.href = "wybierzKino.html"; 
+              }
+            }
+    </script>
+</body>
+</html>
